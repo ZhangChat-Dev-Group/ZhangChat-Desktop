@@ -30,7 +30,7 @@ jobs:
       - name: install packages & make programs
         run: npm install && npm run make
       
-      - name: push codes
+      - name: commit
         run: |
           git config --local user.email "Xiao_Zhang_123@outlook.com"
           git config --local user.name "MrZhang365"
@@ -39,5 +39,5 @@ jobs:
         uses: ad-m/github-push-action@v0.6.0
         with:
           github_token: ${{ secrets.TOKEN_GITHUB }}
-          branch: files
+          branch: main
       
