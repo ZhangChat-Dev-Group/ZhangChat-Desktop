@@ -1,0 +1,33 @@
+{
+  "name": "zhangchat-desktop",
+  "version": "1.0.0",
+  "description": "ZhangChat Desktop Client",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZhangChat-Dev-Group/ZhangChat-Desktop.git"
+  },
+  "author": "MrZhang365",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ZhangChat-Dev-Group/ZhangChat-Desktop/issues"
+  },
+  "homepage": "https://github.com/ZhangChat-Dev-Group/ZhangChat-Desktop#readme",
+  "devDependencies": {
+    "@electron-forge/cli": "^6.0.4",
+    "@electron-forge/maker-deb": "^6.0.4",
+    "@electron-forge/maker-rpm": "^6.0.4",
+    "@electron-forge/maker-squirrel": "^6.0.4",
+    "@electron-forge/maker-zip": "^6.0.4",
+    "electron": "^22.2.0"
+  },
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.0"
+  }
+}
