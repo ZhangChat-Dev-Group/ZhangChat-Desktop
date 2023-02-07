@@ -20,10 +20,24 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
-    - uses: actions/checkout@v3
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-    - run: npm install && npm run make
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+      
+      - name: install packages & make programs
+        run: npm install && npm run make
+      
+      - name: push codes
+        run: |
+          git config --local user.email "Xiao_Zhang_123@outlook.com"
+          git config --local user.name "MrZhang365"
+          git commit -m "Build files (`date '+%F %H:%M %Z'`)" -a
+      - name: push
+        uses: ad-m/github-push-action@v0.6.0
+        with:
+          github_token: ${{ secrets.TOKEN_GITHUB }}
+          branch: files
+      
